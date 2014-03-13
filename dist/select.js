@@ -69,6 +69,8 @@ angular.module('ui.select', [])
       var $select = controllers[0];
       var ngModelCtrl = controllers[1];
 
+      if(attrs.uiSelectIndex) element.querySelectorAll('.ui-select-search').attr('tabindex', attrs.uiSelectIndex);
+
       scope.$watch('$select.selected', function(newVal, oldVal) {
         if (ngModelCtrl.$viewValue !== newVal) ngModelCtrl.$setViewValue(newVal);
       });
